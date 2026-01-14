@@ -39,8 +39,7 @@ jobs:
 
 ## Secrets
 
-- ~~Specifying `GITHUB_TOKEN` to `secrets` is required to using [Check Run APIs](https://developer.github.com/v3/checks/runs/) for generating annotations from SwiftLint Violations.~~
-- Since 3.0.0, `GITHUB_TOKEN` is no longer needed.
+- `GITHUB_TOKEN` is not needed.
 
 ## Example
 ![screenshot](screenshot.png)
