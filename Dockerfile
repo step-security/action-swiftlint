@@ -1,5 +1,5 @@
 # Use official Swift image (regularly updated, fewer vulnerabilities)
-FROM swift:6.0.3-jammy
+FROM swift:6.0.3-noble
 
 LABEL version="3.2.1"
 LABEL repository="https://github.com/step-security/action-swiftlint"
