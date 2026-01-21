@@ -1,4 +1,4 @@
-FROM norionomura/swiftlint:swift-5
+FROM ghcr.io/step-security/swiftlint:0.63.1_swift-6.1
 LABEL version="3.2.1"
 LABEL repository="https://github.com/step-security/action-swiftlint"
 LABEL homepage="https://github.com/step-security/action-swiftlint"
