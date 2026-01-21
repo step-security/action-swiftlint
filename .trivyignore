@@ -1,0 +1,65 @@
+# SwiftLint Docker Image - Trivy Ignore List
+# These CVEs don't affect SwiftLint's linting functionality
+
+# coreutils: chroot escape - SwiftLint doesn't use chroot
+CVE-2016-2781
+
+# gnupg: All GPG-related CVEs - SwiftLint doesn't verify signatures or use GPG
+CVE-2022-3219  # DoS via compressed packets
+CVE-2025-68972 # Signature bypass
+
+# libcurl: Network features SwiftLint doesn't use
+CVE-2025-0167   # .netrc credentials leak - no .netrc usage
+CVE-2025-10148  # WebSocket mask - no WebSocket usage
+CVE-2025-14524  # OAuth2 token leak - no OAuth2 usage
+CVE-2025-14819  # TLS handle reuse - no TLS reuse
+CVE-2025-15079  # SSH/SCP/SFTP - no SSH usage
+CVE-2025-15224  # SSH/SCP/SFTP - no SSH usage
+CVE-2025-9086   # Cookie path overflow - no cookie usage
+
+# git: Sideband payload to terminal - low risk for linting
+CVE-2024-52005
+
+# libexpat: DoS via crafted XML - SwiftLint doesn't parse untrusted XML
+CVE-2025-66382
+
+# libgcrypt: Marvin attack on RSA - SwiftLint doesn't do crypto operations
+CVE-2024-2236
+
+# libicu: Stack overflow in resource bundle parsing - indirect usage, very low risk
+CVE-2025-5222
+
+# shadow-utils: UID/GID config - SwiftLint doesn't create users
+CVE-2024-56433
+
+# tar: Path traversal - SwiftLint doesn't extract untrusted tar files at runtime
+CVE-2025-45582
+
+# libpam: Incomplete fix - SwiftLint doesn't do PAM authentication
+CVE-2025-8941
+
+
+# gcc/libiberty: Compile-time only, not used at runtime
+CVE-2021-3826   # libiberty heap/stack overflow
+CVE-2021-46195  # gcc rust-demangle recursion
+CVE-2022-27943  # libiberty rust-demangle stack exhaustion
+
+# shadow-utils: User management - SwiftLint doesn't create users
+CVE-2023-29383  # chfn input validation
+
+# ncurses: Terminal library - low risk for non-interactive use
+CVE-2023-50495  # segmentation fault
+
+# systemd: Not running systemd services
+CVE-2023-7008   # systemd-resolved DNSSEC
+
+# libzstd: mysql buffer overrun - SwiftLint doesn't use mysql
+CVE-2022-4899
+
+# pcre: Pattern matching edge cases SwiftLint doesn't hit
+CVE-2022-41409  # pcre2 infinite loop
+CVE-2017-11164  # pcre OP_KETRMAX
+
+# libtasn1: ASN.1 parsing - SwiftLint doesn't parse certificates
+CVE-2025-13151  # buffer overflow
+CVE-2021-46848  # out-of-bound access
