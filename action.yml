@@ -3,7 +3,7 @@ description: 'A tool to enforce Swift style and conventions'
 author: 'step-security'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://ghcr.io/step-security/action-swiftlint:v3.2.1@sha256:d02d9b0d75633d36d9af6cf84e7068983f1eac9eeefd16560762ff070858477d' #v3.2.1
 branding:
   icon: 'shield'
   color: 'orange'
