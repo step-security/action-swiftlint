@@ -13,13 +13,22 @@ on:
       - '.github/workflows/docker-lint.yml'
       - 'Dockerfile'
 
+permissions: {}
+
 jobs:
   DockerLint:
+    permissions:
+      contents: read  # for actions/checkout to fetch code
     name: Docker Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@20cf305ff2072d973412fa9b1e3a4f227bda3c76 # v2.14.0
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
       - name: Docker Lint
-        uses: docker://replicated/dockerfilelint
+        uses: docker://replicated/dockerfilelint:latest@sha256:15ce784e5847966b6d9a88cba348a9429f8b5212f6017180f10ce36b472dfe52
         with:
           args: Dockerfile
