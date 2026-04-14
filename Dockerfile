@@ -9,7 +9,7 @@ LABEL "com.github.actions.description"="A tool to enforce Swift style and conven
 LABEL "com.github.actions.icon"="shield"
 LABEL "com.github.actions.color"="orange"
 
-RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends curl jq && rm -rf /var/lib/apt/lists/*
 
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]
